@@ -179,13 +179,13 @@ speech-emotion-crnn/
 
 ## Model iteration history
 
-| Version     | Architecture                    | Val accuracy | Key issue               |
-| ----------- | ------------------------------- | ------------ | ----------------------- |
-| CNN v1      | 4 blocks, 1.27M params          | ~17%         | Severe overfitting      |
-| CNN v2      | 3 blocks, small                 | ~24%         | No temporal modelling   |
-| CRNN v1     | 3 CNN + 2 LSTM, 1024-dim bridge | ~24%         | Bridge vector too large |
-| CRNN v2     | 2 CNN + 1×1 compress + LSTM 64  | ~42%\*       | Single-split variance   |
-| **CRNN v3** | LSTM 96 + Dense 48 + 5-fold CV  | **~86%**     | Happy class confusion   |
+| Version | Architecture | Val accuracy | Key issue |
+|---|---|---|---|
+| CNN v1 | 4 blocks, 1.27M params | ~17% | Severe overfitting |
+| CNN v2 | 3 blocks, small | ~24% | No temporal modelling |
+| CRNN v1 | 3 CNN + 2 LSTM, 1024-dim bridge | ~24% | Bridge vector too large |
+| CRNN v2 | 2 CNN + 1×1 compress + LSTM 64 | ~42%* | Single-split variance |
+| **CRNN v3** | LSTM 96 + Dense 48 + 5-fold CV | **64.5% ± 10.3% CV** | Happy class confusion |
 
 _\* Single-split estimate — high variance. CV mean would be lower._
 
